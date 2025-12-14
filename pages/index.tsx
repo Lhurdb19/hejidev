@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <ThemeProvider>
     <div
-      className="max-w-8xl flex flex-col min-h-screen items-center justify-center gap-10 bg-zinc-50 font-sans dark:bg-gray-800"
+      className="max-w-8xl flex flex-col min-h-screen items-center justify-center gap-10 bg-zinc-50 font-sans px-0 dark:bg-gray-800"
     >
          <div className="fixed top-4 right-4 z-50">
                 <ThemeToggle />

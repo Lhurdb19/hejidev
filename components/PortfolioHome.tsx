@@ -14,19 +14,20 @@ interface Project {
   github?: string;
   live_url?: string;
   image_url?: string;
+  technologies?: string[];
   created_at: string;
 }
 
 export default function PortfolioHome() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showAll, setShowAll] = useState(false); // State to handle showing more projects
+  const [showAll, setShowAll] = useState(false);
 
   const fetchProjects = async () => {
     const { data, error } = await supabase
-      .from<Project>("projects")
+      .from("projects")
       .select("*")
-      .order("created_at", { ascending: false });
+      .order("created_at", { ascending: true }); // <-- Oldest first
 
     if (error) console.error("Error fetching projects:", error.message);
     else if (data) setProjects(data);
@@ -42,7 +43,7 @@ export default function PortfolioHome() {
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
-    <div className="w-full max-w-8xl mx-auto py-16 px-4 space-y-16">
+    <div className="w-full max-w-7xl mx-auto py-1 px-4 md:px-20 space-y-5">
 
       {/* Projects Section */}
       <section id="projects" className="space-y-10">
@@ -53,7 +54,7 @@ export default function PortfolioHome() {
         {loading ? (
           <p className="text-center text-gray-500">Loading projects...</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <AnimatePresence>
               {visibleProjects.map((project, index) => (
                 <motion.div
@@ -64,28 +65,45 @@ export default function PortfolioHome() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="overflow-hidden transform transition hover:scale-105 duration-300">
+                  <Card className="overflow-hidden transform transition hover:scale-105 duration-300 p-0 gap-0 min-h-[300px] md:min-h-[400px] flex flex-col justify-between">
                     {project.image_url && (
                       <img
                         src={project.image_url}
                         alt={project.title}
-                        className="w-full h-48 object-cover rounded-t"
+                        className="w-full h-35 md:h-48 object-cover rounded-t"
                       />
                     )}
-                    <div className="p-4 space-y-2">
-                      <h3 className="text-xl font-semibold">{project.title}</h3>
-                      <p className="text-gray-600 text-sm">{project.description}</p>
-                      <div className="flex gap-2 mt-2 flex-wrap">
+                    <div className="p-2 space-y-2 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-xs md:text-sm font-semibold">{project.title}</h3>
+                        <p className="text-gray-600 text-[9px] md:text-[11px]">{project.description}</p>
+
+                        {/* Technologies */}
+                        {project.technologies && project.technologies.length > 0 && (
+                          <div className="flex flex-wrap gap-1 pt-1">
+                            {project.technologies.map((tech, i) => (
+                              <span
+                                key={i}
+                                className="text-[8px] px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="flex gap-2 mt-1 flex-wrap">
                         {project.github && (
-                          <Button asChild variant="outline" size="sm">
-                            <Link href={project.github} target="_blank">
+                          <Button asChild variant="outline">
+                            <Link href={project.github} target="_blank" className="text-xs">
                               GitHub
                             </Link>
                           </Button>
                         )}
                         {project.live_url && (
-                          <Button asChild size="sm">
-                            <Link href={project.live_url} target="_blank">
+                          <Button asChild>
+                            <Link href={project.live_url} target="_blank" className="text-xs">
                               Live Demo
                             </Link>
                           </Button>

@@ -37,7 +37,7 @@ export default function AboutSection({}: AboutSectionProps) {
   ];
 
   return (
-    <section className="relative w-full max-w-7xl flex flex-col justify-center items-center mx-auto px-4 sm:px-6 md:px-16 py-20 sm:py-32 overflow-hidden">
+    <section className="relative w-full max-w-7xl flex flex-col justify-center items-center mx-auto px-4 sm:px-4 md:px-20 py-20 sm:pb-10 overflow-hidden">
       {/* Floating background icons */}
       {Array.from({ length: 30 }).map((_, i) => {
         const Icon = bgIcons[Math.floor(Math.random() * bgIcons.length)];

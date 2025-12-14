@@ -86,7 +86,7 @@ const experiences: Experience[] = [
 
 export default function ProfessionalJourney() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16">
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-16 py-12 sm:py-16 overflow-hidden">
       <h2 className="text-3xl sm:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-4 text-center">
         Professional Journey
       </h2>
