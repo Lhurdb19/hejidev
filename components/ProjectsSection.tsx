@@ -26,7 +26,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
   return (
     <section id="projects" className="py-20">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-600 dark:text-purple-400">
         Recent Projects
       </h2>
 
@@ -53,7 +53,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 <CardContent className="p-5 space-y-3">
                   <CardTitle className="text-xl">{project.title}</CardTitle>
 
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  <p className="text-gray-800 dark:text-gray-200 text-sm">
                     {project.description}
                   </p>
 

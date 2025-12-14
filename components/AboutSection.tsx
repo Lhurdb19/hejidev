@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import { 
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
   SiExpress, SiNestjs, SiFirebase, SiSupabase, SiMongodb, 
-  SiPostgresql, SiRedis, SiNodedotjs 
+  SiPostgresql, SiRedis, SiNodedotjs, 
+  SiNextcloud,
+  SiJavascript
 } from "react-icons/si";
 
 interface AboutSectionProps {}
@@ -13,17 +15,18 @@ export default function AboutSection({}: AboutSectionProps) {
   const skills = {
     Frontend: [
       { name: "React", icon: SiReact, color: "bg-blue-500/20 text-blue-500" },
-      { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-800/20 text-gray-800" },
+      { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "JavaScript", icon: SiJavascript, color: "bg-yellow-300 text-black/90" },
       { name: "TypeScript", icon: SiTypescript, color: "bg-blue-600/20 text-blue-600" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-teal-400/20 text-teal-400" },
     ],
     Backend: [
       { name: "Node.js", icon: SiNodedotjs, color: "bg-green-500/20 text-green-500" },
-      { name: "Express", icon: SiExpress, color: "bg-gray-700/20 text-gray-700" },
-      { name: "NestJS", icon: SiNestjs, color: "bg-red-500/20 text-red-500" },
+      { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
     ],
     Database: [
       { name: "Firebase", icon: SiFirebase, color: "bg-yellow-400/20 text-yellow-400" },
+      { name: "NextAuth", icon: SiNextcloud, color: "bg-gray-400/20 dark:text-gray-200 text-gray-800" },
       { name: "Supabase", icon: SiSupabase, color: "bg-blue-500/20 text-blue-500" },
       { name: "MongoDB", icon: SiMongodb, color: "bg-green-600/20 text-green-600" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "bg-blue-700/20 text-blue-700" },
@@ -89,15 +92,15 @@ export default function AboutSection({}: AboutSectionProps) {
           transition={{ duration: 1, delay: 0.4 }}
         >
           <h3 className="text-xl sm:text-2xl font-semibold text-purple-600 dark:text-purple-400 mb-3 sm:mb-4">My Journey</h3>
-          <p className="text-gray-700 dark:text-gray-300 mb-2 text-xs sm:text-[17px]">
+          <p className="text-gray-700 dark:text-gray-300 mb-2 text-xs sm:text-sm">
             Based in Osogbo, Nigeria, I have dedicated my career to mastering modern web technologies and building robust, high-performance web applications. 
             My journey has been fueled by curiosity, creativity, and a love for solving complex challenges.
           </p>
-          <p className="text-gray-700 dark:text-gray-300 mb-2 text-xs sm:text-[17px]">
+          <p className="text-gray-700 dark:text-gray-300 mb-2 text-xs sm:text-sm">
             I work extensively with React, Next.js, and TypeScript for frontend development, also Node.js, and NestJS for backend systems. 
             Every project I contribute to is scalable, maintainable, and highly optimized.
           </p>
-          <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-[17px]">
+          <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm">
             Outside coding, I enjoy exploring emerging technologies, contributing to open-source projects, and sharing knowledge with the developer community.
           </p>
         </motion.div>
@@ -127,12 +130,12 @@ export default function AboutSection({}: AboutSectionProps) {
                   return (
                     <motion.div
                       key={skill.name}
-                      className={`flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-2 rounded-full shadow-sm ${skill.color} bg-opacity-20 cursor-pointer`}
+                      className={`flex items-center gap-1 px-2 py-1 sm:px-2 sm:py-1 rounded-full shadow-sm ${skill.color} bg-opacity-20 cursor-pointer`}
                       whileHover={{ scale: 1.05, rotate: 2 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                      <span className="font-medium text-xs sm:text-sm">{skill.name}</span>
+                      <Icon className="w-4 h-4" />
+                      <span className="font-medium text-[9px] sm:text-[10px]">{skill.name}</span>
                     </motion.div>
                   );
                 })}

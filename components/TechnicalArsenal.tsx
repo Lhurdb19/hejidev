@@ -100,8 +100,8 @@ export default function TechnicalArsenal() {
         viewport={{ once: true }}
         className="text-center mb-10 relative z-10"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight ">
-          My Technical Arsenal
+        <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-purple-600 dark:text-purple-400">
+          Technical Arsenal
         </h2>
         <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
           Technologies, tools, and languages I use to build scalable and maintainable applications.

@@ -47,7 +47,7 @@ export default function PortfolioHome() {
 
       {/* Projects Section */}
       <section id="projects" className="space-y-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-purple-600 dark:text-purple-400">
           My Projects
         </h2>
 
@@ -76,7 +76,7 @@ export default function PortfolioHome() {
                     <div className="p-2 space-y-2 flex-1 flex flex-col justify-between">
                       <div>
                         <h3 className="text-xs md:text-sm font-semibold">{project.title}</h3>
-                        <p className="text-gray-600 text-[9px] md:text-[11px]">{project.description}</p>
+                        <p className="text-gray-800 dark:text-gray-200 text-[9px] md:text-[11px]">{project.description}</p>
 
                         {/* Technologies */}
                         {project.technologies && project.technologies.length > 0 && (

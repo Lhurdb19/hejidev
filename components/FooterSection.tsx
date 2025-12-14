@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, Phone, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="max-w-8xl w-full px-0 md:px-20 border-t bg-black/70 dark:bg-gray-800">
+    <footer className="max-w-8xl w-full px-0 md:px-20 border-t bg-gray-800 dark:bg-gray-800">
       <div className="w-full mx-auto px-4 md:px-0 py-12 grid gap-8 md:grid-cols-3">
         
         {/* BRAND */}
@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-xs text-muted-foreground py-4 border-t">
-        © {new Date().getFullYear()} Hejidev. All rights reserved.
+        © {new Date().getFullYear()} <span className="text-purple-300 dark:text-purple-400 font-bold">HejiDev</span>. All rights reserved.
       </div>
     </footer>
   );

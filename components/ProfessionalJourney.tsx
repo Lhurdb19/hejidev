@@ -115,18 +115,18 @@ export default function ProfessionalJourney() {
                 <div className={`w-full sm:w-5/5 z-10 ${isLeft ? "pr-4 sm:pr-8" : "pl-4 sm:pl-8"}`}>
                   <div className="bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-start text-left text-sm sm:text-base">
                     <h3 className="text-lg sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">{exp.role}</h3>
-                    <a href="#" className="text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base">{exp.company}</a>
+                    <a href="#" className="text-purple-600 dark:text-purple-400 font-medium text-xs sm:text-sm">{exp.company}</a>
                     <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-500 dark:text-gray-400 text-xs sm:text-sm mt-1">
-                      <span className="flex items-center gap-1"><FaCalendarAlt /> {exp.date}</span>
-                      <span className="flex items-center gap-1"><FaMapMarkerAlt /> {exp.location}</span>
+                      <span className="flex items-center gap-1 text-[10px]"><FaCalendarAlt /> {exp.date}</span>
+                      <span className="flex items-center gap-1 text-[10px]"><FaMapMarkerAlt /> {exp.location}</span>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 mt-2 text-xs sm:text-sm">{exp.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 leading-5 md:leading-7 mt-2 text-xs sm:text-sm">{exp.description}</p>
 
                     <div className="mt-2">
-                      <div className="flex items-center gap-2 mb-1 font-medium text-gray-900 dark:text-gray-100 text-sm">
+                      <div className="flex items-center gap-2 mb-1 font-bold text-gray-900 dark:text-gray-100 text-[10px]">
                         <FaTrophy /> Key Achievements
                       </div>
-                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-xs sm:text-sm">
+                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-[9px] sm:text-[10px]">
                         {exp.achievements.map((ach, i) => (
                           <li key={i}>{ach}</li>
                         ))}
@@ -135,8 +135,8 @@ export default function ProfessionalJourney() {
 
                     <div className="flex flex-wrap gap-2 mt-2 sm:mt-3">
                       {exp.tech.map((Icon, i) => (
-                        <div key={i} className="bg-gray-100 dark:bg-gray-800 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-purple-600 dark:text-purple-400 flex items-center gap-1 text-xs sm:text-sm">
-                          <Icon className="w-3 h-3 sm:w-4 sm:h-4" /> {Icon.displayName || "Tech"}
+                        <div key={i} className="bg-gray-100 dark:bg-gray-800 px-1 py-1 sm:px-2 rounded-full text-purple-600 dark:text-purple-400 flex items-center gap-1 sm:text-[8px]">
+                          <Icon className="w-3 h-3" /> {Icon.displayName || "Tech"}
                         </div>
                       ))}
                     </div>

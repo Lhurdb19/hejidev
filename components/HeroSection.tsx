@@ -42,7 +42,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
   const name = "HejiDev".split(""); // Split name into letters
 
   return (
-    <section className="relative w-full max-w-8xl mx-auto px-4 md:px-16 py-10 overflow-hidden shadow-lg">
+    <section className="relative w-full max-w-8xl mx-auto px-4 md:px-16 py-10 overflow-hidden bg-gray-200 dark:bg-gray-900 shadow-lg">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-20 bg-linear-to-br from-purple-50 to-purple-200 dark:from-gray-900 dark:to-gray-800"></div>
 
@@ -75,7 +75,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-xl md:text-4xl max-w-2xl font-bold leading-tight"
+            className="text-xl md:text-4xl max-w-2xl font-bold leading-tight dark:text-white text-black/90"
           >
             Crafting <span className="text-purple-600 dark:text-purple-400">Next-Level Web Experiences</span>
           </motion.h1>
