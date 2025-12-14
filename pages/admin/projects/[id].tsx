@@ -166,7 +166,7 @@ function EditProject() {
           value={liveUrl}
           onChange={(e) => setLiveUrl(e.target.value)}
           placeholder="Live project URL"
-          className="w-full p-3 border rounded"
+          className="w-full p-3 border rounded text-white"
         />
 
         {/* Image Upload */}
@@ -175,14 +175,14 @@ function EditProject() {
             <img
               src={imageUrl}
               alt="Project"
-              className="w-full h-40 object-cover rounded"
+              className="w-full h-40 object-cover rounded text-white"
             />
           )}
           <input
             type="file"
             accept="image/*"
             onChange={(e) => setImageFile(e.target.files?.[0] || null)}
-            className="w-full"
+            className="w-full text-white"
           />
         </div>
 
@@ -193,7 +193,7 @@ function EditProject() {
               value={techInput}
               onChange={(e) => setTechInput(e.target.value)}
               placeholder="Add technology (e.g. Next.js)"
-              className="flex-1 p-3 border rounded"
+              className="flex-1 p-3 border rounded text-white"
             />
             <button
               type="button"

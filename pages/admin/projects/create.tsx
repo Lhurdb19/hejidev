@@ -93,7 +93,7 @@ function AddProject() {
           placeholder="Project Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-full p-3 border rounded-2xl border-b-purple-900"
+          className="w-full p-3 border rounded-2xl border-b-purple-900 text-white"
           required
         />
 
@@ -101,7 +101,7 @@ function AddProject() {
           placeholder="Project Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="w-full p-3 border rounded-2xl border-b-purple-900"
+          className="w-full p-3 border rounded-2xl border-b-purple-900 text-white"
           required
         />
 
@@ -110,7 +110,7 @@ function AddProject() {
           placeholder="GitHub Link"
           value={github}
           onChange={(e) => setGithub(e.target.value)}
-          className="w-full p-3 border rounded-2xl border-b-purple-900"
+          className="w-full p-3 border rounded-2xl border-b-purple-900 text-white"
         />
 
         <input
@@ -118,7 +118,7 @@ function AddProject() {
           placeholder="Live URL"
           value={liveUrl}
           onChange={(e) => setLiveUrl(e.target.value)}
-          className="w-full p-3 border rounded-2xl border-b-purple-900"
+          className="w-full p-3 border rounded-2xl border-b-purple-900 text-white"
         />
 
         {/* 🔹 NEW: Technologies UI */}
@@ -130,7 +130,7 @@ function AddProject() {
               placeholder="e.g React"
               value={techInput}
               onChange={(e) => setTechInput(e.target.value)}
-              className="flex-1 p-3 border rounded-2xl border-b-purple-900"
+              className="flex-1 p-3 border rounded-2xl border-b-purple-900 text-white"
             />
             <button
               type="button"

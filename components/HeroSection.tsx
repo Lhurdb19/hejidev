@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,40 +40,16 @@ const bgIcons = [
 
 export default function HeroSection({ imageUrl }: HeroSectionProps) {
   const name = "HejiDev".split(""); // Split name into letters
-  const [gradient, setGradient] = useState("linear-gradient(135deg, #e9d5ff, #ede9fe)");
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  // Fully continuous smooth gradient animation
-  useEffect(() => {
-    let start = 0;
-    const animate = () => {
-      const r = Math.floor(200 + 55 * Math.sin(start));
-      const g = Math.floor(180 + 75 * Math.sin(start + 2));
-      const b = Math.floor(230 + 25 * Math.sin(start + 4));
-
-      const r2 = Math.floor(180 + 75 * Math.sin(start + 1));
-      const g2 = Math.floor(230 + 25 * Math.sin(start + 3));
-      const b2 = Math.floor(200 + 55 * Math.sin(start + 5));
-
-      setGradient(`linear-gradient(135deg, rgb(${r2},${g2},${b2}), rgb(${r},${g},${b}))`);
-      start += 0.01;
-      requestAnimationFrame(animate);
-    };
-    animate();
-  }, []);
 
   return (
-    <section ref={heroRef} className="relative w-full max-w-7xl mx-auto px-4 md:px-16 py-10 overflow-hidden shadow-lg">
+    <section className="relative w-full max-w-8xl mx-auto px-4 md:px-16 py-10 overflow-hidden shadow-lg">
       {/* Background gradient */}
-      <motion.div
-        className="absolute inset-0 -z-20 transition-all duration-300"
-        style={{ background: gradient }}
-      ></motion.div>
+      <div className="absolute inset-0 -z-20 bg-linear-to-br from-purple-50 to-purple-200 dark:from-gray-900 dark:to-gray-800"></div>
 
       {/* Floating background icons */}
       {Array.from({ length: 50 }).map((_, i) => {
         const Icon = bgIcons[Math.floor(Math.random() * bgIcons.length)];
-        const size = Math.floor(Math.random() * 14) + 12;
+        const size = Math.floor(Math.random() * 8) + 12;
         const top = Math.floor(Math.random() * 100);
         const left = Math.floor(Math.random() * 100);
         const delay = Math.random() * 10;
@@ -93,7 +68,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
       })}
 
       {/* Hero content */}
-      <div className="max-w-7xl relative z-10 flex flex-col-reverse md:flex-row items-center justify-between mx-auto gap-10 md:gap-16">
+      <div className="max-w-8xl relative z-10 flex flex-col-reverse md:flex-row items-center justify-between mx-auto gap-10 md:gap-16">
         {/* Text */}
         <div className="flex-1 space-y-4 text-center md:text-left">
           <motion.h1
@@ -132,6 +107,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
               <Link href="#contact">Work With Me</Link>
             </Button>
 
+            {/* ✅ DOWNLOAD RESUME BUTTON */}
             <Button
               asChild
               size="lg"
@@ -157,6 +133,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
             animate={{ y: [0, -10, 0], scale: [1, 1.03, 1] }}
             transition={{ repeat: Infinity, duration: 5 }}
           >
+            {/* Profile Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: [1, 1.03, 1] }}
@@ -174,6 +151,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
               <div className="absolute inset-0 rounded-full bg-linear-to-br from-purple-400/20 to-purple-600/20 blur-xl animate-pulse"></div>
             </motion.div>
 
+            {/* Orbiting badges */}
             {orbitTechBadges.map((tech, idx) => {
               const Icon = tech.icon;
               const angle = (360 / orbitTechBadges.length) * idx;
@@ -202,6 +180,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
               );
             })}
 
+            {/* Animated name "I am HejiDev" */}
             <div className="mt-6 flex justify-center gap-1">
               <motion.span
                 className="text-xl md:text-3xl font-semibold text-purple-600 dark:text-purple-400 drop-shadow-lg"
