@@ -152,8 +152,15 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
             </motion.div>
 
             {/* Orbiting badges (on image border) */}
+            {/* Orbiting badges (on image border) */}
             <motion.div
-              className="absolute inset-0 flex items-center justify-center rounded-full -translate-y-8"
+              className="
+    absolute inset-0 flex items-center justify-center rounded-full
+    -translate-y-7 md:-translate-y-8
+    [--orbit-offset:30%]
+    [--orbit-radius:100px]
+    md:[--orbit-radius:135px]
+  "
               animate={{ rotate: 360 }}
               transition={{
                 repeat: Infinity,
@@ -161,6 +168,8 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
                 ease: "linear",
               }}
             >
+
+
               {orbitTechBadges.map((tech, idx) => {
                 const Icon = tech.icon;
                 const angle = (360 / orbitTechBadges.length) * idx;
@@ -172,7 +181,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
                     style={{
                       transform: `
             rotate(${angle}deg)
-            translate(calc(30% + 135px))
+            translate(calc(var(--orbit-offset) + var(--orbit-radius)))
             rotate(-${angle}deg)
           `,
                     }}

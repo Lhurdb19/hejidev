@@ -76,7 +76,7 @@ export default function PortfolioHome() {
                     <div className="p-2 space-y-2 flex-1 flex flex-col justify-between">
                       <div>
                         <h3 className="text-xs md:text-sm font-semibold">{project.title}</h3>
-                        <p className="text-gray-800 dark:text-gray-200 text-[9px] md:text-[11px]">{project.description}</p>
+                        <p className="text-gray-800 dark:text-gray-200 text-[10px] md:text-[11px]">{project.description}</p>
 
                         {/* Technologies */}
                         {project.technologies && project.technologies.length > 0 && (
