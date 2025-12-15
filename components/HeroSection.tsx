@@ -42,7 +42,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
   const name = "HejiDev".split(""); // Split name into letters
 
   return (
-    <section className="relative w-full max-w-8xl mx-auto px-4 md:px-16 py-10 overflow-hidden bg-gray-200 dark:bg-gray-900 shadow-lg">
+    <section className="relative w-full max-w-8xl mx-auto px-4 md:px-16 py-10 md:py-20 overflow-hidden bg-gray-200 dark:bg-gray-900 shadow-lg">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-20 bg-linear-to-br from-purple-50 to-purple-200 dark:from-gray-900 dark:to-gray-800"></div>
 
@@ -135,10 +135,10 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
           >
             {/* Profile Image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: [1, 1.03, 1] }}
               transition={{ delay: 0.3, duration: 1.2 }}
-              className="relative w-50 h-50 md:w-72 md:h-72 rounded-full overflow-hidden shadow-2xl ring-4 ring-purple-600/20 dark:ring-purple-400/20"
+              className="relative w-50 h-50 md:w-70 md:h-70 rounded-full overflow-hidden shadow-2xl ring-4 ring-purple-600/20 dark:ring-purple-400/20"
             >
               <Image
                 src={imageUrl}
@@ -151,34 +151,42 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
               <div className="absolute inset-0 rounded-full bg-linear-to-br from-purple-400/20 to-purple-600/20 blur-xl animate-pulse"></div>
             </motion.div>
 
-            {/* Orbiting badges */}
-            {orbitTechBadges.map((tech, idx) => {
-              const Icon = tech.icon;
-              const angle = (360 / orbitTechBadges.length) * idx;
-              const radius = 80 + Math.random() * 50;
-              const radians = (angle * Math.PI) / 180;
-              const x = radius * Math.cos(radians);
-              const y = radius * Math.sin(radians);
+            {/* Orbiting badges (on image border) */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center rounded-full -translate-y-8"
+              animate={{ rotate: 360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 35,
+                ease: "linear",
+              }}
+            >
+              {orbitTechBadges.map((tech, idx) => {
+                const Icon = tech.icon;
+                const angle = (360 / orbitTechBadges.length) * idx;
 
-              return (
-                <motion.div
-                  key={tech.name}
-                  className="absolute"
-                  style={{ top: `50%`, left: `50%` }}
-                  animate={{
-                    x: [0, x, x + 5, 0],
-                    y: [0, y, y + 10, 0],
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 360],
-                  }}
-                  transition={{ repeat: Infinity, duration: 15 + Math.random() * 10, ease: "easeInOut" }}
-                >
-                  <div className="flex items-center justify-center w-5 h-5 rounded-full bg-white dark:bg-gray-800 shadow-sm">
-                    <Icon className="w-2 h-2 text-purple-600 dark:text-purple-400" />
+                return (
+                  <div
+                    key={tech.name}
+                    className="absolute"
+                    style={{
+                      transform: `
+            rotate(${angle}deg)
+            translate(calc(30% + 135px))
+            rotate(-${angle}deg)
+          `,
+                    }}
+                  >
+                    <div className="flex items-center justify-center w-7 h-7 rounded-full
+          bg-white dark:bg-gray-800 shadow-lg ring-1 ring-purple-500/30">
+                      <Icon className="w-3 h-3 text-purple-600 dark:text-purple-400" />
+                    </div>
                   </div>
-                </motion.div>
-              );
-            })}
+                );
+              })}
+            </motion.div>
+
+
 
             {/* Animated name "I am HejiDev" */}
             <div className="mt-6 flex justify-center gap-1">
