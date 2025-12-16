@@ -65,7 +65,7 @@ export default function PortfolioHome() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="overflow-hidden transform transition hover:scale-105 duration-300 p-0 gap-0 min-h-[300px] md:min-h-[400px] flex flex-col justify-between">
+                  <Card className="overflow-hidden transform transition hover:scale-105 duration-300 p-0 gap-0 min-h-[300px] md:min-h-[400px] flex flex-col justify-between dark:bg-gray-900">
                     {project.image_url && (
                       <img
                         src={project.image_url}
@@ -76,7 +76,7 @@ export default function PortfolioHome() {
                     <div className="p-2 space-y-2 flex-1 flex flex-col justify-between">
                       <div>
                         <h3 className="text-xs md:text-sm font-semibold">{project.title}</h3>
-                        <p className="text-gray-800 dark:text-gray-200 text-[10px] md:text-[11px]">{project.description}</p>
+                        <p className="text-gray-800 dark:text-gray-200 text-[12px] md:text-[12px]">{project.description}</p>
 
                         {/* Technologies */}
                         {project.technologies && project.technologies.length > 0 && (
@@ -102,7 +102,7 @@ export default function PortfolioHome() {
                           </Button>
                         )}
                         {project.live_url && (
-                          <Button asChild>
+                          <Button asChild className="bg-gray-200 text-black/80">
                             <Link href={project.live_url} target="_blank" className="text-xs">
                               Live Demo
                             </Link>

@@ -117,16 +117,16 @@ export default function ProfessionalJourney() {
                     <h3 className="text-lg sm:text-2xl font-semibold text-gray-900 dark:text-gray-100">{exp.role}</h3>
                     <a href="#" className="text-purple-600 dark:text-purple-400 font-medium text-xs sm:text-sm">{exp.company}</a>
                     <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-500 dark:text-gray-400 text-xs sm:text-sm mt-1">
-                      <span className="flex items-center gap-1 text-[10px]"><FaCalendarAlt /> {exp.date}</span>
-                      <span className="flex items-center gap-1 text-[10px]"><FaMapMarkerAlt /> {exp.location}</span>
+                      <span className="flex items-center gap-1 text-[11px]"><FaCalendarAlt /> {exp.date}</span>
+                      <span className="flex items-center gap-1 text-[11px]"><FaMapMarkerAlt /> {exp.location}</span>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300 leading-5 md:leading-7 mt-2 text-xs sm:text-sm">{exp.description}</p>
 
                     <div className="mt-2">
-                      <div className="flex items-center gap-2 mb-1 font-bold text-gray-900 dark:text-gray-100 text-[10px]">
+                      <div className="flex items-center gap-2 mb-1 font-bold text-gray-900 dark:text-gray-100 text-[12px]">
                         <FaTrophy /> Key Achievements
                       </div>
-                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-[9px] sm:text-[10px]">
+                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-[9px] sm:text-[12px]">
                         {exp.achievements.map((ach, i) => (
                           <li key={i}>{ach}</li>
                         ))}
@@ -135,8 +135,8 @@ export default function ProfessionalJourney() {
 
                     <div className="flex flex-wrap gap-2 mt-2 sm:mt-3">
                       {exp.tech.map((Icon, i) => (
-                        <div key={i} className="bg-gray-100 dark:bg-gray-800 px-1 py-1 sm:px-2 rounded-full text-purple-600 dark:text-purple-400 flex items-center gap-1 sm:text-[8px]">
-                          <Icon className="w-3 h-3" /> {Icon.displayName || "Tech"}
+                        <div key={i} className="bg-gray-100 dark:bg-gray-800 px-1 py-1 sm:px-2 rounded-full text-purple-600 dark:text-purple-400 flex items-center gap-1 sm:text-[10px]">
+                          <Icon className="w-4 h-4" /> {Icon.displayName || "Tech"}
                         </div>
                       ))}
                     </div>

@@ -14,23 +14,23 @@ interface AboutSectionProps {}
 export default function AboutSection({}: AboutSectionProps) {
   const skills = {
     Frontend: [
-      { name: "React", icon: SiReact, color: "bg-blue-500/20 text-blue-500" },
+      { name: "React", icon: SiReact, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
       { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "JavaScript", icon: SiJavascript, color: "bg-yellow-300 text-black/90" },
-      { name: "TypeScript", icon: SiTypescript, color: "bg-blue-600/20 text-blue-600" },
-      { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-teal-400/20 text-teal-400" },
+      { name: "JavaScript", icon: SiJavascript, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "TypeScript", icon: SiTypescript, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
     ],
     Backend: [
-      { name: "Node.js", icon: SiNodedotjs, color: "bg-green-500/20 text-green-500" },
+      { name: "Node.js", icon: SiNodedotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
       { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
     ],
     Database: [
-      { name: "Firebase", icon: SiFirebase, color: "bg-yellow-400/20 text-yellow-400" },
-      { name: "NextAuth", icon: SiNextcloud, color: "bg-gray-400/20 dark:text-gray-200 text-gray-800" },
-      { name: "Supabase", icon: SiSupabase, color: "bg-blue-500/20 text-blue-500" },
-      { name: "MongoDB", icon: SiMongodb, color: "bg-green-600/20 text-green-600" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "bg-blue-700/20 text-blue-700" },
-      { name: "Redis", icon: SiRedis, color: "bg-red-600/20 text-red-600" },
+      { name: "Firebase", icon: SiFirebase, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "NextAuth", icon: SiNextcloud, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "Supabase", icon: SiSupabase, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "MongoDB", icon: SiMongodb, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "Redis", icon: SiRedis, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
     ],
   };
 

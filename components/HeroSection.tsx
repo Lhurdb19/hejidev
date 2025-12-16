@@ -102,11 +102,7 @@ export default function HeroSection({ imageUrl }: HeroSectionProps) {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-
-            <Button asChild variant="outline" size="lg" className="hover:scale-105 transition-transform">
-              <Link href="#contact">Work With Me</Link>
-            </Button>
-
+            
             {/* ✅ DOWNLOAD RESUME BUTTON */}
             <Button
               asChild
