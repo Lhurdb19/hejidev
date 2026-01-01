@@ -124,7 +124,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <Card className="p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl">
+                    <Card className="px-3 py-5 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl">
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <Input
                                 placeholder="Your Name"

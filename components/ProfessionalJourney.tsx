@@ -120,13 +120,13 @@ export default function ProfessionalJourney() {
                       <span className="flex items-center gap-1 text-[11px]"><FaCalendarAlt /> {exp.date}</span>
                       <span className="flex items-center gap-1 text-[11px]"><FaMapMarkerAlt /> {exp.location}</span>
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300 leading-5 md:leading-7 mt-2 text-xs sm:text-sm">{exp.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 leading-5 md:leading-7 mt-2 text-sm">{exp.description}</p>
 
                     <div className="mt-2">
-                      <div className="flex items-center gap-2 mb-1 font-bold text-gray-900 dark:text-gray-100 text-[12px]">
+                      <div className="flex items-center gap-2 mb-1 font-bold text-gray-900 dark:text-gray-100 text-[13px]">
                         <FaTrophy /> Key Achievements
                       </div>
-                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-[9px] sm:text-[12px]">
+                      <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-[11px] sm:text-[12px]">
                         {exp.achievements.map((ach, i) => (
                           <li key={i}>{ach}</li>
                         ))}

@@ -14,23 +14,23 @@ interface AboutSectionProps {}
 export default function AboutSection({}: AboutSectionProps) {
   const skills = {
     Frontend: [
-      { name: "React", icon: SiReact, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "JavaScript", icon: SiJavascript, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "TypeScript", icon: SiTypescript, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "React", icon: SiReact, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "JavaScript", icon: SiJavascript, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "TypeScript", icon: SiTypescript, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
     ],
     Backend: [
-      { name: "Node.js", icon: SiNodedotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "Node.js", icon: SiNodedotjs, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "Next.js", icon: SiNextdotjs, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
     ],
     Database: [
-      { name: "Firebase", icon: SiFirebase, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "NextAuth", icon: SiNextcloud, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "Supabase", icon: SiSupabase, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "MongoDB", icon: SiMongodb, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
-      { name: "Redis", icon: SiRedis, color: "bg-gray-900/20 text-gray-800 dark:text-gray-100" },
+      { name: "Firebase", icon: SiFirebase, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "NextAuth", icon: SiNextcloud, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "Supabase", icon: SiSupabase, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "MongoDB", icon: SiMongodb, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
+      { name: "Redis", icon: SiRedis, color: "bg-gray-900/0 text-gray-800 dark:text-gray-100" },
     ],
   };
 
@@ -92,15 +92,15 @@ export default function AboutSection({}: AboutSectionProps) {
           transition={{ duration: 1, delay: 0.4 }}
         >
           <h3 className="text-xl sm:text-2xl font-semibold text-purple-600 dark:text-purple-400 mb-3 sm:mb-4">My Journey</h3>
-          <p className="text-gray-700 dark:text-gray-300 mb-2 text-xs sm:text-sm">
+          <p className="text-gray-700 dark:text-gray-300 mb-2 text-sm">
             Based in Osogbo, Nigeria, I have dedicated my career to mastering modern web technologies and building robust, high-performance web applications. 
             My journey has been fueled by curiosity, creativity, and a love for solving complex challenges.
           </p>
-          <p className="text-gray-700 dark:text-gray-300 mb-2 text-xs sm:text-sm">
+          <p className="text-gray-700 dark:text-gray-300 mb-2 text-sm">
             I work extensively with React, Next.js, and TypeScript for frontend development, also Node.js, and NestJS for backend systems. 
             Every project I contribute to is scalable, maintainable, and highly optimized.
           </p>
-          <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm">
+          <p className="text-gray-700 dark:text-gray-300 text-sm">
             Outside coding, I enjoy exploring emerging technologies, contributing to open-source projects, and sharing knowledge with the developer community.
           </p>
         </motion.div>

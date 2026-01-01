@@ -1,30 +1,46 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Bell } from "lucide-react";
 import { supabase } from "@/lib/supabase";
-import { Badge } from "@/components/ui/badge";
+import { useEffect, useState } from "react";
 
-export default function UnreadBadge() {
-  const [count, setCount] = useState(0);
+export default function AdminBell() {
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  const fetchUnread = async () => {
+    const { count } = await supabase
+      .from("contacts")
+      .select("*", { count: "exact", head: true })
+      .eq("is_read", false);
+
+    setUnreadCount(count || 0);
+  };
 
   useEffect(() => {
-    const fetchUnread = async () => {
-      const { count } = await supabase
-        .from("contacts")
-        .select("*", { count: "exact", head: true })
-        .eq("is_read", false);
-
-      setCount(count || 0);
-    };
-
     fetchUnread();
+
+    const channel = supabase
+      .channel("contacts-count")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "contacts" },
+        fetchUnread
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
-  if (count === 0) return null;
-
   return (
-    <Badge className="ml-auto bg-red-600 text-white">
-      {count}
-    </Badge>
+    <div className="relative">
+      <Bell className="w-6 h-6" />
+      {unreadCount > 0 && (
+        <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 rounded-full">
+          {unreadCount}
+        </span>
+      )}
+    </div>
   );
 }
